@@ -1,0 +1,36 @@
+#include<bits/stdc++.h> 
+using namespace std;
+#include <string>  
+void subString(string s, long long n,char c)  
+{ 
+    long long count=0;
+    for(long long i=0;i<n;i++)
+	{
+		if(s[i]==c)
+		{
+			count+=n-i;
+			continue;
+		}
+		for(long long j=i;j<n;j++)
+		{
+			if(s[j]==c){	
+			count+=(n-j);
+			break;}
+		}
+    }			
+cout<<count<<endl;            
+}
+int main()  
+{ 
+    long long t;cin>>t;
+    while(t>0)
+    {
+     long long n;cin>>n;
+    char a[n];
+    cin>>a; string s(a);
+    char c; cin>>c;
+    subString(s,s.length(),c); 
+    t--;
+    }
+return 0;    
+} 
